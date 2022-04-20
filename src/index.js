@@ -6,6 +6,7 @@ app.use('/',()=>{
     console.log('api is going to be created');
 })
 
+app.get('/get',userRouter)
 mongoose.connect(
     `mongodb+srv://jayshree_bawankar:12345@cluster0.sf3so.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 ).then(
