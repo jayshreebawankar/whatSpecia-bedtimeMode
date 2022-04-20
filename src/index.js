@@ -1,19 +1,15 @@
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose')
-const express = require('express')
-const clgRoute = requie('../Router/clgRoute.js')
+const mongoose = require('mongoose');
+const express = require('express');
+const app = express()
 
-const app = express();
-app.use(bodyParser.json())
-app.use('/clg',clgRoute)
+app.use('/',()=>{
+    console.log('api is going to be created');
+})
 
 mongoose.connect(
     `mongodb+srv://jayshree_bawankar:12345@cluster0.sf3so.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 ).then(
-    app.listen(5000, ()=>{
-        console.log('Server Connected at port 5000');
+    app.listen(5432, ()=>{
+        console.log('server connected at 5432 port');
     })
-).catch(e=>console.log(e))
-
-
-
+).catch(e=>{console.log(e)})
